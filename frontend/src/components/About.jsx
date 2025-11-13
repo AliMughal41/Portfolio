@@ -4,9 +4,9 @@ import "../styles/About.css";
 
 const About = () => {
   const stats = [
-    { value: "50+", label: "Projects Delivered" },
-    { value: "2+", label: "Years Experience" },
-    { value: "30+", label: "Happy Clients" },
+    { value: "10+", label: "Projects Delivered" },
+    { value: "1", label: "Years Experience" },
+    { value: "7+", label: "Happy Clients" },
     { value: "24/7", label: "Support Available" },
   ];
 
@@ -20,8 +20,7 @@ const About = () => {
             I bring a unique blend of technical expertise and creative
             problem-solving to every project. As a BS Information Technology
             graduate from University of the Punjab (CGPA: 3.08/4.00), I have
-            successfully delivered numerous projects using the MERN stack and
-            Flutter.
+            successfully delivered numerous projects using the MERN stack.
           </p>
           <p>
             My passion lies in creating seamless user experiences and robust
