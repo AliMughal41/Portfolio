@@ -16,7 +16,10 @@ connectDatabase();
 // Middleware
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL || "http://localhost:5173"],
+    origin: [
+      process.env.FRONTEND_URL || "http://localhost:5173",
+      "https://your-frontend.vercel.app", // Add your frontend Vercel URL here after deployment
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
@@ -34,7 +37,10 @@ app.use("/api/v1/cv", cvRoutes);
 
 // Root route
 app.get("/", (req, res) => {
-  res.send("Portfolio Backend API is running!");
+  res.json({
+    success: true,
+    message: "Portfolio Backend API is running!",
+  });
 });
 
 // Health check route

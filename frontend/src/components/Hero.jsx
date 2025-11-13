@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import API_URL from "../config/api";
 import "../styles/Hero.css";
 
 const Hero = () => {
@@ -35,44 +36,7 @@ const Hero = () => {
   const handleDownloadCV = async () => {
     try {
       setDownloading(true);
-
-      // Method 1: Simple window.open (Recommended - Works with IDM)
-      window.open("http://localhost:4000/api/v1/cv/download", "_blank");
-
-      setDownloading(false);
-    } catch (error) {
-      console.error("Download error:", error);
-      alert("Failed to download CV. Please try again.");
-      setDownloading(false);
-    }
-  };
-
-  // Alternative method using fetch (if simple method doesn't work)
-  const handleDownloadCVWithFetch = async () => {
-    try {
-      setDownloading(true);
-
-      const response = await fetch("http://localhost:4000/api/v1/cv/download");
-
-      if (!response.ok) {
-        throw new Error("Download failed");
-      }
-
-      // Get the blob from response
-      const blob = await response.blob();
-
-      // Create a download link
-      const url = window.URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = "Muhammad_Ali_CV.pdf";
-      document.body.appendChild(link);
-      link.click();
-
-      // Cleanup
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
-
+      window.open(`${API_URL}/api/v1/cv/download`, "_blank");
       setDownloading(false);
     } catch (error) {
       console.error("Download error:", error);
@@ -96,7 +60,6 @@ const Hero = () => {
           </p>
 
           <div className="hero-buttons">
-            {/* Download CV Button */}
             <button
               onClick={handleDownloadCV}
               className="btn-primary"
@@ -105,7 +68,6 @@ const Hero = () => {
               {downloading ? "Downloading..." : "Download CV"}
             </button>
 
-            {/* Social Icons */}
             <div className="social-icons">
               {socialLinks.map((social, index) => (
                 <a
@@ -122,7 +84,6 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Profile Image Section */}
         <div className="hero-image">
           <div className="profile-container">
             <div className="profile-ring"></div>

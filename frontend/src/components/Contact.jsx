@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import API_URL from "../config/api";
 import "../styles/Contact.css";
-
-
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -27,7 +26,7 @@ const Contact = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/v1/message/send",
+        `${API_URL}/api/v1/message/send`,
         formData
       );
 
