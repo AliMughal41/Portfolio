@@ -1,0 +1,5 @@
+run = "node backend/server.js"
+modules = ["nodejs-20"]
+
+[deployment]
+run = ["node", "backend/server.js"]
