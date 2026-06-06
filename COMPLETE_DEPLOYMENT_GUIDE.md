@@ -211,58 +211,64 @@ VITE_API_URL=http://localhost:4000
 
 ---
 
-# Step 5: Railway Deployment
-## 🚂 Deploy on Railway
+# Step 5: Render Deployment
+## 🎨 Deploy on Render (Free)
 
-### 5.1: Create Railway Account
-1. Go to: **https://railway.app**
-2. Click **"Start Building"**
+### 5.1: Create Render Account
+1. Go to: **https://render.com**
+2. Click **"Sign Up"**
 3. Sign up with **GitHub** (recommended)
-4. Authorize Railway to access GitHub
+4. Authorize Render to access GitHub
 5. Done! Your account is ready
 
-### 5.2: Create New Project
-1. In Railway dashboard, click **"New Project"**
-2. Click **"Deploy from GitHub repo"**
-3. Click **"Configure GitHub App"** if prompted
-4. Select your GitHub repository: `portfolio`
-5. Click **"Deploy"**
+### 5.2: Create New Web Service
+1. In Render dashboard, click **"New +"**
+2. Select **"Web Service"**
+3. Click **"Connect a repository"**
+4. Find and select your **Portfolio** repository
+5. Click **"Connect"**
 
-Railway will automatically detect your project and start deploying!
+### 5.3: Configure Service
+1. **Name**: `portfolio` (or any name)
+2. **Runtime**: `Node`
+3. **Build Command**: `npm install && npm --prefix backend install && npm --prefix frontend install && npm --prefix frontend run build`
+4. **Start Command**: `node backend/server.js`
+5. Click **"Create Web Service"**
 
-### 5.3: Add Environment Variables
+Render will start building your project!
+
+### 5.4: Add Environment Variables
 While deployment is in progress:
 
-1. In Railway dashboard, go to your project
-2. Click on the **service** (should say "backend" or your repo name)
-3. Go to **"Variables"** tab
-4. Click **"+ New Variable"** and add these:
+1. In Render dashboard, go to your service
+2. Go to **"Environment"** tab
+3. Click **"Add Environment Variable"** and add these:
 
 ```
 PORT=4000
-FRONTEND_URL=https://your-railway-url.railway.app
 NODE_ENV=production
+FRONTEND_URL=https://your-render-url.onrender.com
 
-MONGO_URI=mongodb+srv://portfolio_user:your_password@cluster-name.mongodb.net/PORTFOLIO?retryWrites=true&w=majority
+MONGO_URI=mongodb+srv://portfolio_user:ali786mughal41@cluster0.jbfhpni.mongodb.net/PORTFOLIO?retryWrites=true&w=majority
 
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
-SMTP_EMAIL=your-email@gmail.com
-SMTP_PASSWORD=your-16-char-password
+SMTP_EMAIL=alimghal41@gmail.com
+SMTP_PASSWORD=jjrtmbvtksypdvpw
 MY_EMAIL=alimghal41@gmail.com
 ```
 
-### 5.4: Get Your Railway URL
-1. In Railway dashboard, find your deployment
-2. Look for **"Public URL"** or **"Domain"**
-3. It will look like: `https://portfolio-production-xxxx.railway.app`
+### 5.5: Get Your Render URL
+1. In Render dashboard, find your deployment
+2. Look for **"URL"** at the top
+3. It will look like: `https://portfolio-xxxxx.onrender.com`
 4. Copy this URL
 
-### 5.5: Update Frontend for Production
+### 5.6: Update Frontend for Production
 
 1. Update `frontend/.env`:
 ```env
-VITE_API_URL=https://your-railway-url.railway.app
+VITE_API_URL=https://your-render-url.onrender.com
 ```
 
 2. Rebuild frontend:
@@ -275,11 +281,11 @@ cd ..
 3. Commit changes:
 ```bash
 git add .
-git commit -m "Update frontend URL for production"
+git commit -m "Update frontend URL for Render production"
 git push
 ```
 
-Railway will automatically re-deploy!
+Render will automatically re-deploy!
 
 ---
 
@@ -287,11 +293,11 @@ Railway will automatically re-deploy!
 ## ✅ Check If Everything Works
 
 ### 6.1: Test API Endpoints
-1. Go to your Railway URL in browser
+1. Go to your Render URL in browser
 2. You should see your portfolio homepage
 
 ### 6.2: Test Health Check
-Visit: `https://your-railway-url.railway.app/api/v1/health`
+Visit: `https://your-render-url.onrender.com/api/v1/health`
 
 Should return:
 ```json
@@ -372,10 +378,11 @@ taskkill /PID <PID> /F
 
 ### ❌ "Railway build failed"
 **Solutions:**
-1. Check deployment logs in Railway dashboard
+1. Check deployment logs in Render dashboard
 2. Make sure `.env` file is NOT committed
 3. Make sure all dependencies are in package.json
 4. Check Node version (should be 18+)
+5. Check build command is correct
 
 ### ❌ "API endpoint returns 404"
 **Error:** `{"success": false, "message": "API route not found"}`
@@ -392,21 +399,21 @@ taskkill /PID <PID> /F
 ## 🆘 Need More Help?
 
 ### Check Logs
-**In Railway Dashboard:**
-1. Click on your service
+**In Render Dashboard:**
+1. Go to your service
 2. Go to "Logs" tab
 3. Look for error messages
 
 ### Verify Environment Variables
-**In Railway Dashboard:**
-1. Click on your service
-2. Go to "Variables" tab
+**In Render Dashboard:**
+1. Go to your service
+2. Go to "Environment" tab
 3. Verify all variables are correctly added
 
 ### Restart Deployment
-**In Railway Dashboard:**
+**In Render Dashboard:**
 1. Go to "Deployments" tab
-2. Click restart button on latest deployment
+2. Click "Redeploy" on the latest deployment
 
 ---
 
@@ -430,14 +437,14 @@ Your deployment is successful when:
 ```
 Your Portfolio is Live! 🎉
 
-Frontend: https://your-railway-url.railway.app
-Backend API: https://your-railway-url.railway.app/api/v1
-Health Check: https://your-railway-url.railway.app/api/v1/health
+Frontend: https://your-render-url.onrender.com
+Backend API: https://your-render-url.onrender.com/api/v1
+Health Check: https://your-render-url.onrender.com/api/v1/health
 
 Database: MongoDB Atlas (Cloud)
 Email: Gmail SMTP
-Hosting: Railway
-Domain: your-railway-url.railway.app
+Hosting: Render
+Domain: your-render-url.onrender.com
 ```
 
 ---
@@ -504,8 +511,8 @@ git push
 - [ ] App password generated
 - [ ] GitHub repository created
 - [ ] Code pushed to GitHub
-- [ ] Railway account created
-- [ ] Project deployed on Railway
+- [ ] Render account created
+- [ ] Project deployed on Render
 - [ ] Environment variables added
 - [ ] Frontend URL updated
 - [ ] Frontend rebuilt
