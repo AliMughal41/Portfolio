@@ -26,16 +26,7 @@ const Skills = () => {
         { name: "JWT Authentication", level: 80 },
       ],
     },
-    {
-      title: "Mobile Development",
-      icon: "fas fa-mobile-alt",
-      skills: [
-        { name: "Flutter", level: 88 },
-        { name: "Dart", level: 85 },
-        { name: "Android Studio", level: 80 },
-        { name: "Firebase", level: 82 },
-      ],
-    },
+
     {
       title: "Tools & Technologies",
       icon: "fas fa-tools",

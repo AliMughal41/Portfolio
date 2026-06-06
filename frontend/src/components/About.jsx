@@ -17,17 +17,10 @@ const About = () => {
         <div>
           <h3>My Experience</h3>
           <p>
-            I bring a unique blend of technical expertise and creative
-            problem-solving to every project. As a BS Information Technology
-            graduate from University of the Punjab (CGPA: 3.08/4.00), I have
-            successfully delivered numerous projects using the MERN stack.
+            Motivated MERN Stack Developer skilled in building scalable full-stack web applications. With a strong foundation from my BS in Information Technology (CGPA: 3.13/4.00) from University of the Punjab, I've gained practical experience at Jinnah Technologies, focusing on performance optimization and clean code practices.
           </p>
           <p>
-            My passion lies in creating seamless user experiences and robust
-            applications that exceed client expectations. From developing
-            full-featured job portals with real-time chat to building
-            cloud-based hospital management systems, I stay updated with the
-            latest industry trends to deliver modern, scalable solutions.
+            My expertise spans responsive user interface development, efficient backend services, and modern web technologies. I'm passionate about creating seamless user experiences, solving complex problems, and continuously learning to deliver innovative solutions that exceed expectations.
           </p>
         </div>
         <div className="cards-grid">

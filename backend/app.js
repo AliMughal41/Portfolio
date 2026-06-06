@@ -2,11 +2,16 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import path from "path";
+import { fileURLToPath } from "url";
 import { connectDatabase } from "./config/database.js";
 import messageRoutes from "./routes/messageRoutes.js";
 import cvRoutes from "./routes/cvRoutes.js";
 
 dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 
@@ -31,6 +36,10 @@ app.use(express.urlencoded({ extended: true }));
 // Serve static files (for CV)
 app.use(express.static("public"));
 
+// Serve frontend build files in production
+const frontendPath = path.join(__dirname, "../frontend/dist");
+app.use(express.static(frontendPath));
+
 // Routes
 app.use("/api/v1/message", messageRoutes);
 app.use("/api/v1/cv", cvRoutes);
@@ -51,12 +60,16 @@ app.get("/api/v1/health", (req, res) => {
   });
 });
 
-// 404 handler
-app.use((req, res) => {
-  res.status(404).json({
-    success: false,
-    message: "Route not found",
-  });
+// 404 handler - Serve index.html for client-side routing
+app.use((req, res, next) => {
+  if (req.path.startsWith("/api")) {
+    res.status(404).json({
+      success: false,
+      message: "API route not found",
+    });
+  } else {
+    res.sendFile(path.join(frontendPath, "index.html"));
+  }
 });
 
 // Error handler

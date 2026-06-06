@@ -7,7 +7,7 @@ const Education = () => {
       degree: "Bachelor of Science in Information Technology",
       institution: "University of the Punjab, Lahore",
       period: "2021 - 2025",
-      grade: "CGPA: 3.08 out of 4.0",
+      grade: "CGPA: 3.13 out of 4.0",
       description:
         "Comprehensive study of computer science fundamentals, software engineering, MERN stack development, database systems, web development, and modern programming technologies. Developed Skill Bridge job portal as final year project using MongoDB, Express.js, React.js, and Node.js with real-time chat functionality.",
     },

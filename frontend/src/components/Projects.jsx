@@ -29,31 +29,14 @@ const Projects = () => {
       tech: ["React.js", "Node.js", "MongoDB", "Payment Gateway", "Maps API"],
       link: "#",
     },
+
     {
       id: 4,
-      icon: "fas fa-chart-line",
-      title: "Expecio - Expense Tracker",
+      icon: "fas fa-cogs",
+      title: "ERP (POS) System",
       description:
-        "A simple expense tracking web application where you can add your expenses monthly or daily and get detailed reports, charts, budget analysis, and financial insights to manage your finances better.",
-      tech: ["React.js", "Node.js", "MongoDB", "Chart.js", "PDF Export"],
-      link: "#",
-    },
-    {
-      id: 5,
-      icon: "fas fa-mobile-alt",
-      title: "AuraPlay - Streaming App",
-      description:
-        "A streaming mobile application like Rave where users register and watch movies together with different persons by creating watch parties. Features real-time synchronization, chat, and social interactions.",
-      tech: ["Flutter", "Dart", "Firebase", "WebRTC", "Video APIs"],
-      link: "#",
-    },
-    {
-      id: 6,
-      icon: "fas fa-globe",
-      title: "Portfolio Website",
-      description:
-        "A responsive portfolio website built with modern web technologies, featuring smooth animations, contact forms, project showcases, and optimal performance across all devices with MERN stack integration.",
-      tech: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
+        "Developed complete frontend of an ERP (POS) system with responsive and user-friendly interfaces. Focused on creating intuitive UI/UX for inventory management, sales transactions, and reporting features.",
+      tech: ["React.js", "HTML5", "CSS3", "Tailwind CSS"],
       link: "#",
     },
   ];

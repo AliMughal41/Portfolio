@@ -8,12 +8,7 @@ const Services = () => {
       description:
         "Full-stack web development using MERN stack (MongoDB, Express.js, React.js, Node.js). I create responsive, fast, and scalable web applications with clean, maintainable code, REST APIs, JWT authentication, and optimal user experience.",
     },
-    {
-      icon: "fas fa-mobile-alt",
-      title: "Mobile App Development",
-      description:
-        "Cross-platform mobile app development using Flutter and Dart. I build beautiful, high-performance mobile applications for both iOS and Android with native-like performance, smooth animations, and excellent user interfaces.",
-    },
+
     {
       icon: "fas fa-paint-brush",
       title: "UI/UX Design",

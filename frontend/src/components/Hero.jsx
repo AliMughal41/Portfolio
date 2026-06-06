@@ -53,10 +53,7 @@ const Hero = () => {
           <h1>Muhammad Ali</h1>
           <div className="subtitle">Full Stack Developer</div>
           <p>
-            I'm a passionate Full Stack Developer specializing in creating
-            exceptional digital experiences through modern web technologies
-            (MERN Stack) and innovative mobile solutions (Flutter). Building
-            scalable applications with clean code and optimal performance.
+            Motivated MERN Stack Developer skilled in building scalable full-stack web applications using MongoDB, Express.js, React, and Node.js. Strong in creating responsive user interfaces and integrating efficient backend services. Building exceptional digital experiences with clean code and optimal performance.
           </p>
 
           <div className="hero-buttons">
